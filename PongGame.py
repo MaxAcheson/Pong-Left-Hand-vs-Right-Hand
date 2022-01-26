@@ -29,3 +29,7 @@ def left_paddle_down():
     y -= 20
     left_paddle.sety(y)
 
+# Left Paddle Key Binds
+game_window.listen()
+game_window.onkeypress(left_paddle_up, "q")
+game_window.onkeypress(left_paddle_down, "a")
