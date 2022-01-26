@@ -78,6 +78,10 @@ score_writer.hideturtle()
 score_writer.goto(0,260)
 score_writer.write("Left Hand: 0      Right Hand: 0", align="center", font=("courier", 18, "normal"))
 
+# Scoring Mechanism
+left_score = 0
+right_score = 0
+
 # Main Loop
 while True:
     game_window.update()
@@ -98,10 +102,16 @@ while True:
     if ball.xcor() > 390:
         ball.goto(0,0)
         ball.dx *= -1
+        left_score += 1
+        score_writer.clear()
+        score_writer.write("Left Hand: {}      Right Hand: {}".format(left_score, right_score), align="center", font=("courier", 18, "normal"))
 
     if ball.xcor() < -390:
         ball.goto(0,0)
         ball.dx *= -1
+        right_score += 1
+        score_writer.clear()
+        score_writer.write("Left Hand: {}      Right Hand: {}".format(left_score, right_score), align="center", font=("courier", 18, "normal"))
     
     # Collision Mechanics
     if (ball.xcor() > 350 and ball.xcor() < 370) and (ball.ycor() < right_paddle.ycor() + 40 and ball.ycor() > right_paddle.ycor() -40):
