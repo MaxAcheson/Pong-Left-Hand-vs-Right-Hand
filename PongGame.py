@@ -118,9 +118,9 @@ while True:
     if (ball.xcor() > 350 and ball.xcor() < 370) and (ball.ycor() < right_paddle.ycor() + 40 and ball.ycor() > right_paddle.ycor() -40):
         ball.setx(350)
         ball.dx *= -1
-        winsound.PlaySound("bonk.mp3", winsound.SND_ASYNC)
+        winsound.PlaySound("bonk.wav", winsound.SND_ASYNC)
 
     if (ball.xcor() < -350 and ball.xcor() > -370) and (ball.ycor() < left_paddle.ycor() + 40 and ball.ycor() > left_paddle.ycor() -40):
         ball.setx(-350)
         ball.dx *= -1
-        winsound.PlaySound("bonk.mp3", winsound.SND_ASYNC)
+        winsound.PlaySound("bonk.wav", winsound.SND_ASYNC)
