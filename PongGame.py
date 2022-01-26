@@ -17,3 +17,15 @@ left_paddle.shapesize(stretch_wid=5, stretch_len=1)
 left_paddle.color("white")
 left_paddle.penup()
 left_paddle.goto(-370,0)
+
+# Left Paddle Movement
+def left_paddle_up():
+    y = left_paddle.ycor()
+    y += 20
+    left_paddle.sety(y)
+
+def left_paddle_down():
+    y = left_paddle.ycor()
+    y -= 20
+    left_paddle.sety(y)
+
