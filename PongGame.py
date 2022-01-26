@@ -59,15 +59,15 @@ game_window.listen()
 game_window.onkeypress(right_paddle_up, "o")
 game_window.onkeypress(right_paddle_down, "l")
 
-#Pong Ball
+# Pong Ball
 ball = turtle.Turtle()
 ball.speed(0)
 ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0,0)
-ball.dx = 0.05
-ball.dy = 0.05
+ball.dx = 0.1
+ball.dy = 0.1
 
 # Main Loop
 while True:
@@ -92,4 +92,13 @@ while True:
 
     if ball.xcor() < -390:
         ball.goto(0,0)
+        ball.dx *= -1
+    
+    # Collision Mechanics
+    if (ball.xcor() > 350 and ball.xcor() < 370) and (ball.ycor() < right_paddle.ycor() + 40 and ball.ycor() > right_paddle.ycor() -40):
+        ball.setx(350)
+        ball.dx *= -1
+
+    if (ball.xcor() < -350 and ball.xcor() > -370) and (ball.ycor() < left_paddle.ycor() + 40 and ball.ycor() > left_paddle.ycor() -40):
+        ball.setx(-350)
         ball.dx *= -1
