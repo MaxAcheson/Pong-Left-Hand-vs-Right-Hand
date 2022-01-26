@@ -33,3 +33,12 @@ def left_paddle_down():
 game_window.listen()
 game_window.onkeypress(left_paddle_up, "q")
 game_window.onkeypress(left_paddle_down, "a")
+
+# Coding for Right Paddle
+right_paddle = turtle.Turtle()
+right_paddle.speed(0)
+right_paddle.shape("square")
+right_paddle.shapesize(stretch_wid=5, stretch_len=1)
+right_paddle.color("white")
+right_paddle.penup()
+right_paddle.goto(370,0)
