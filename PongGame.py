@@ -42,3 +42,19 @@ right_paddle.shapesize(stretch_wid=5, stretch_len=1)
 right_paddle.color("white")
 right_paddle.penup()
 right_paddle.goto(370,0)
+
+# Right Paddle Movement
+def right_paddle_up():
+    y = right_paddle.ycor()
+    y += 20
+    right_paddle.sety(y)
+
+def right_paddle_down():
+    y = right_paddle.ycor()
+    y -= 20
+    right_paddle.sety(y)
+
+# Right Paddle Key Binds
+game_window.listen()
+game_window.onkeypress(right_paddle_up, "o")
+game_window.onkeypress(right_paddle_down, "l")
