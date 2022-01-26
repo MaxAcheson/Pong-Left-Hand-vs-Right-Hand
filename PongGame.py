@@ -58,3 +58,38 @@ def right_paddle_down():
 game_window.listen()
 game_window.onkeypress(right_paddle_up, "o")
 game_window.onkeypress(right_paddle_down, "l")
+
+#Pong Ball
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape("square")
+ball.color("white")
+ball.penup()
+ball.goto(0,0)
+ball.dx = 0.05
+ball.dy = 0.05
+
+# Main Loop
+while True:
+    game_window.update()
+
+    # Ball Movement
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+
+    # Border Parameters
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1
+
+    if ball.ycor() < -283:
+        ball.sety(-283)
+        ball.dy *= -1
+
+    if ball.xcor() > 390:
+        ball.goto(0,0)
+        ball.dx *= -1
+
+    if ball.xcor() < -390:
+        ball.goto(0,0)
+        ball.dx *= -1
