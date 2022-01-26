@@ -69,6 +69,15 @@ ball.goto(0,0)
 ball.dx = 0.1
 ball.dy = 0.1
 
+# Scoreboard
+score_writer = turtle.Turtle()
+score_writer.speed(0)
+score_writer.color("White")
+score_writer.penup()
+score_writer.hideturtle()
+score_writer.goto(0,260)
+score_writer.write("Left Hand: 0      Right Hand: 0", align="center", font=("courier", 18, "normal"))
+
 # Main Loop
 while True:
     game_window.update()
